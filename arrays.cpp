@@ -24,7 +24,14 @@ void PrintString(string reverse_string) {
 }
 
 vector<int> MergeSorted(vector<int> v1, vector<int> v2) {
-    int total_size = v1.size() + v2.size();
+    if (v1.size() == 0) {
+        return v2;
+    }
+
+    if (v2.size() == 0) {
+        return v1;
+    }
+
     vector<int> merged_vector;
     for (int i: v1) {
         for (int j: v2) {
