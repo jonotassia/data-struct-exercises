@@ -3,6 +3,9 @@
         "xstring": "cpp",
         "iostream": "cpp",
         "ostream": "cpp",
-        "vector": "cpp"
+        "vector": "cpp",
+        "xutility": "cpp",
+        "initializer_list": "cpp",
+        "type_traits": "cpp"
     }
 }
