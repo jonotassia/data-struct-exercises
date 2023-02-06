@@ -1,8 +1,10 @@
 #include <string>
 #include <iostream>
+#include <vector>
 
 using std::string;
 using std::cout;
+using std::vector;
 
 class HashNode {
     public:
@@ -43,6 +45,16 @@ class HashTable {
             data[index] = new HashNode(key, value);
         }
 
+        vector<string> keys() {
+            vector<string> keys;
+            for (int i; i < size; i++) {
+                HashNode hash = *data[i];
+                keys.push_back(hash.key);
+                cout << hash.key;
+            }
+            return keys;
+        }
+
     private:
         int _hash(string key) {
             int hash = 0;
@@ -64,5 +76,7 @@ int main() {
     // Setter by key
     cout << hash.GetValue("Orange") << "\n";
     cout << hash.GetValue("Apple");
+
+    hash.keys();
 }
 
