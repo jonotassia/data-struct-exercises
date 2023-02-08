@@ -70,6 +70,10 @@ class LinkedList {
         }
 
         LinkedList Reverse() {
+            if (length == 1) {
+                return *this;
+            }
+            
             LinkedList temp(this->head->value);
             Node* node = this->head;
 
