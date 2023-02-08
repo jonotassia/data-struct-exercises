@@ -69,6 +69,18 @@ class LinkedList {
             this->length++;
         }
 
+        LinkedList Reverse() {
+            LinkedList temp(this->head->value);
+            Node* node = this->head;
+
+            for (int i = 1; i < this->length; i++) {
+                node = node->next_node;
+                temp.Prepend(node->value);
+            }
+
+            return temp;
+        }
+
         void Remove(int position) {
             Node* node;
             node = this->head;
@@ -80,6 +92,7 @@ class LinkedList {
             Node* rem_node = node->next_node;
             node->next_node = rem_node->next_node;
             delete rem_node;
+            this->length--;
         }
 
         void PrintList() {
@@ -104,4 +117,5 @@ int main() {
     list.Remove(1);
     list.PrintList();
     list.Insert(0, 4);
+    list = list.Reverse();
 }
