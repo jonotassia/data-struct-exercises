@@ -7,6 +7,9 @@
         "xutility": "cpp",
         "initializer_list": "cpp",
         "type_traits": "cpp",
-        "list": "cpp"
+        "list": "cpp",
+        "system_error": "cpp",
+        "xlocnum": "cpp",
+        "xtr1common": "cpp"
     }
 }

@@ -35,12 +35,11 @@ class Queue {
                 this->front = new_node;
                 this->back = new_node;
                 this->length++;
-                return;
+            } else {
+                this->back->next_node = new_node;
+                this->back = new_node;
+                this->length++;
             }
-            
-            this->back->next_node = new_node;
-            this->back = new_node;
-            this->length++;
         }
 
         void dequeue() {

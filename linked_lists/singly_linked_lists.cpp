@@ -70,6 +70,7 @@ class LinkedList {
         }
 
         LinkedList Reverse() {
+            // Alternatively, you could use a temp Node to reverse linkages from left-to-right to right-to-left
             if (length == 1) {
                 return *this;
             }
@@ -122,4 +123,5 @@ int main() {
     list.PrintList();
     list.Insert(0, 4);
     list = list.Reverse();
+    list.PrintList();
 }

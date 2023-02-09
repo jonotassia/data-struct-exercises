@@ -29,12 +29,11 @@ class Stack {
                 this->top = new_node;
                 this->bottom = new_node;
                 this->length++;
-                return;
+            } else {
+                new_node->next_node = this->top;
+                this->top = new_node;
+                this->length++;   
             }
-
-            new_node->next_node = this->top;
-            this->top = new_node;
-            this->length++;
         }
 
         void pop() {
