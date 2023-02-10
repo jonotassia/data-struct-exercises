@@ -49,18 +49,31 @@ int fibonacciIterative(int n){
     return answer;
 }
 
-//Implement a function that reverses a string using iteration...and then recursion!
-string reverseString(string str) {
-    
+//Implement a function that reverses a string using iteration...and then recursion! Solution: https://repl.it/@aneagoie/reverseString
+string reverseStringRecursive(string str) {
+    //pass in string and chop off and return last letter
+    if (str.size() > 1) {
+        char last_char = str[str.size()-1];
+        str.pop_back();
+        return last_char + reverseStringRecursive(str);
+    }
+    return str;
 }
 
+string reverseStringIterative(string str) {
+    string new_string;
 
-//should return: 'yretsam oyoy'
+    for (int i = str.size()-1; i >= 0; i--) {
+        new_string += str[i];
+    }
+    return new_string;
+}
 
 int main() {
     cout << findFactorialRecursive(5) << "\n";
     cout << findFactorialIterative(5) << "\n";
     cout << fibonacciRecursive(9) << "\n";
     cout << fibonacciIterative(6) << "\n";
-    cout << reverseString("yoyo mastery") << "\n";
+    cout << reverseStringRecursive("yoyo mastery") << "\n";
+    cout << reverseStringIterative("yoyo mastery") << "\n";
 }
