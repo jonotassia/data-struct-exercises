@@ -1,8 +1,10 @@
 #include <iostream>
 #include <string>
+#include <unordered_map>
 
 using std::string;
 using std::cout;
+using std::unordered_map;
 
 // Write two functions that finds the factorial of any number. One should use recursive, the other should just use a for loop
 int findFactorialRecursive(int number) {
@@ -49,6 +51,22 @@ int fibonacciIterative(int n){
     return answer;
 }
 
+int fibonacciDynamic(int n) {
+    unordered_map<int, int> cache;
+
+    return [&] {
+        if (cache.find(n) != cache.end()) {
+            return cache[n];
+        } else {
+            if (n < 2) {
+            return n;
+            } else {
+                return fibonacciDynamic(n-1) + fibonacciDynamic(n-2);
+            }
+        }
+    } ();
+}
+
 //Implement a function that reverses a string using iteration...and then recursion! Solution: https://repl.it/@aneagoie/reverseString
 string reverseStringRecursive(string str) {
     //pass in string and chop off and return last letter
@@ -73,6 +91,7 @@ int main() {
     cout << findFactorialRecursive(5) << "\n";
     cout << findFactorialIterative(5) << "\n";
     cout << fibonacciRecursive(9) << "\n";
+    cout << fibonacciDynamic(9) << "\n";
     cout << fibonacciIterative(6) << "\n";
     cout << reverseStringRecursive("yoyo mastery") << "\n";
     cout << reverseStringIterative("yoyo mastery") << "\n";
