@@ -10,6 +10,8 @@
         "list": "cpp",
         "system_error": "cpp",
         "xlocnum": "cpp",
-        "xtr1common": "cpp"
+        "xtr1common": "cpp",
+        "xhash": "cpp",
+        "unordered_map": "cpp"
     }
 }
